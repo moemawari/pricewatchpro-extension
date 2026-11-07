@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PriceWatchPro Extension: Price History on Store Pages</title>
+  <meta name="description" content="Free browser extension that shows price history on Walmart, Best Buy and Home Depot product pages. Plain JavaScript, no analytics, open to read on GitHub.">
+  <link rel="icon" href="icon128.png">
+  <style>
+    :root { --blue: #0b3d91; --ink: #1d2433; --muted: #5b6475; --line: #e3e7ef; }
+    * { box-sizing: border-box; }
+    body { margin: 0; font: 17px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color: var(--ink); background: #fff; }
+    main { max-width: 860px; margin: 0 auto; padding: 32px 20px 56px; }
+    header { display: flex; align-items: center; gap: 14px; }
+    header img { width: 56px; height: 56px; }
+    h1 { font-size: 30px; line-height: 1.25; margin: 0; }
+    h2 { font-size: 21px; margin: 36px 0 10px; }
+    .lead { font-size: 19px; color: var(--muted); margin: 14px 0 22px; }
+    .buttons { display: flex; flex-wrap: wrap; gap: 10px; }
+    .btn { display: inline-block; padding: 11px 18px; border-radius: 8px; text-decoration: none; font-weight: 600; border: 1px solid var(--blue); }
+    .btn.primary { background: var(--blue); color: #fff; }
+    .btn.secondary { color: var(--blue); }
+    figure { margin: 26px 0; }
+    figure img { width: 100%; height: auto; border: 1px solid var(--line); border-radius: 10px; }
+    figcaption { color: var(--muted); font-size: 14px; margin-top: 6px; }
+    table { width: 100%; border-collapse: collapse; font-size: 16px; }
+    th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+    code { background: #f3f5f9; padding: 1px 5px; border-radius: 4px; font-size: 14px; }
+    a { color: var(--blue); }
+    footer { margin-top: 44px; padding-top: 16px; border-top: 1px solid var(--line); color: var(--muted); font-size: 14px; }
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <img src="icon128.png" alt="PriceWatchPro icon" width="56" height="56">
+    <h1>PriceWatchPro browser extension</h1>
+  </header>
+  <p class="lead">Price history right on Walmart, Best Buy and Home Depot product pages, so you can see
+    in a couple of seconds whether a sale is a real price drop.</p>
+  <div class="buttons">
+    <a class="btn primary" href="https://chromewebstore.google.com/detail/kcfdlaodpbkjmedljhoebjbpahocopap">Add to Chrome, free</a>
+    <a class="btn secondary" href="https://www.pricewatchpro.com/">Visit PriceWatchPro</a>
+  </div>
+
+  <figure>
+    <img src="screenshot-1-hero.png" alt="PriceWatchPro panel showing a product's price history on a store page" width="1280" height="800">
+    <figcaption>The panel on a product page: current, lowest and highest recorded price, and the price chart.</figcaption>
+  </figure>
+
+  <h2>What it shows</h2>
+  <ul>
+    <li>The current price, plus the lowest and highest prices <a href="https://www.pricewatchpro.com/">PriceWatchPro</a> has recorded</li>
+    <li>A chart of every recorded price change, and an "At its lowest tracked price" flag</li>
+    <li>A toolbar popup with a short written analysis, such as how today's price compares with its 90-day average</li>
+    <li>One click to the full chart, where you can set a free price-drop email alert</li>
+  </ul>
+
+  <h2>Where it works</h2>
+  <table>
+    <tr><th>Store</th><th>Product pages</th><th>On the web</th></tr>
+    <tr><td>Walmart</td><td><code>walmart.com/ip/…</code></td><td><a href="https://www.pricewatchpro.com/walmart">Walmart price tracker</a></td></tr>
+    <tr><td>Best Buy</td><td><code>bestbuy.com/site/…</code>, <code>bestbuy.com/product/…</code></td><td><a href="https://www.pricewatchpro.com/bestbuy">Best Buy price tracker</a></td></tr>
+    <tr><td>Home Depot</td><td><code>homedepot.com/p/…</code></td><td><a href="https://www.pricewatchpro.com/homedepot">Home Depot price tracker</a></td></tr>
+  </table>
+  <p>Desktop Chrome, Microsoft Edge, Brave and Opera. Shopping for Black Friday? The
+    <a href="https://www.pricewatchpro.com/black-friday">Black Friday price check</a> compares this year's prices with last year's.</p>
+
+  <figure>
+    <img src="screenshot-3-popup.png" alt="The PriceWatchPro toolbar popup with a written price analysis" width="1280" height="800">
+    <figcaption>The toolbar popup with the written price analysis.</figcaption>
+  </figure>
+
+  <h2>Privacy</h2>
+  <p>No analytics, no tracking, and no access to your browsing history. On a supported product page the
+    extension sends only that product's public item number to PriceWatchPro to look up its price history,
+    without cookies. Every network call is in one file, <code>background.js</code>, which you can read on GitHub.
+    Full policy: <a href="https://www.pricewatchpro.com/privacy">pricewatchpro.com/privacy</a>.</p>
+
+  <h2>How the prices are collected</h2>
+  <p>PriceWatchPro records each product's price from the stores' own data and keeps every change, so each
+    history keeps growing. The details are on
+    <a href="https://www.pricewatchpro.com/how-we-track-prices">How we track prices</a>.</p>
+
+  <footer>
+    PriceWatchPro by YAYA APPS, LLC · <a href="https://www.pricewatchpro.com/contact">Contact</a> ·
+    support@yaya-tech.com<br>
+    PriceWatchPro is an independent price tracker and isn't affiliated with or endorsed by Walmart, Best Buy or Home Depot.
+  </footer>
+</main>
+</body>
+</html>

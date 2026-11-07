@@ -1,0 +1,151 @@
+/*
+ * Panel styles.
+ *
+ * Everything is scoped under .pwp-* and uses `all: initial`-style resets on
+ * the container so the retailer's own stylesheet cannot bleed in. Retailer
+ * CSS is aggressive (Walmart and Home Depot both style bare elements), so
+ * each rule is explicit rather than relying on inheritance.
+ */
+
+.pwp-panel {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 2147483000; /* below the max so retailer modals can still win */
+  width: 300px;
+  background: #ffffff;
+  border: 1px solid rgba(16, 33, 65, 0.12);
+  border-radius: 10px;
+  box-shadow: 0 8px 28px rgba(16, 33, 65, 0.22);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: #102141;
+  overflow: hidden;
+}
+
+.pwp-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #0b3d91;
+  padding: 8px 12px;
+}
+
+.pwp-brand {
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.pwp-close {
+  background: transparent;
+  border: 0;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0 2px;
+}
+
+.pwp-close:hover {
+  color: #fae391;
+}
+
+.pwp-body {
+  padding: 12px;
+}
+
+.pwp-badge-low {
+  background: #e8f5ee;
+  color: #14683f;
+  border: 1px solid #bfe3ce;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 8px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.pwp-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.pwp-label {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #6c757d;
+  margin-bottom: 2px;
+}
+
+.pwp-price {
+  font-size: 20px;
+  font-weight: 700;
+  color: #0b3d91;
+  line-height: 1.1;
+}
+
+.pwp-stat {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.1;
+}
+
+.pwp-low { color: #198754; }
+.pwp-high { color: #adb5bd; }
+
+.pwp-spark {
+  display: block;
+  margin: 6px 0 4px;
+}
+
+.pwp-meta {
+  font-size: 11px;
+  color: #6c757d;
+  margin-bottom: 10px;
+}
+
+.pwp-muted {
+  font-size: 13px;
+  color: #6c757d;
+  margin: 0 0 10px;
+  line-height: 1.4;
+}
+
+.pwp-cta {
+  display: block;
+  text-align: center;
+  background: #102141;
+  color: #ffffff !important;
+  text-decoration: none !important;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 9px 10px;
+  border-radius: 50rem;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.pwp-cta:hover {
+  background: #fae391;
+  color: #102141 !important;
+}
+
+/* The track action is a <button>, so it needs the resets an <a> does not. */
+button.pwp-cta {
+  width: 100%;
+  border: 0;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+button.pwp-cta:disabled {
+  opacity: 0.7;
+  cursor: default;
+  background: #102141;
+  color: #ffffff !important;
+}
