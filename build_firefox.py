@@ -23,10 +23,15 @@ HERE = Path(__file__).resolve().parent
 FILES = ["background.js", "content.js", "shared.js", "popup.html", "popup.js", "panel.css",
          "icons/icon16.png", "icons/icon48.png", "icons/icon128.png"]
 GECKO_ID = "extension@pricewatchpro.com"
+# addons.mozilla.org allows at most 45 characters in "name" (the Chrome name is 64).
+# The store names are in the summary ("description"), which AMO shows under the name.
+FIREFOX_NAME = "PriceWatchPro: Price Tracker & Price History"
 
 
 def firefox_manifest(chrome: dict) -> dict:
     m = json.loads(json.dumps(chrome))  # deep copy
+    m["name"] = FIREFOX_NAME
+    assert len(m["name"]) <= 45, len(m["name"])
     m["background"] = {"scripts": ["background.js"]}
     m["browser_specific_settings"] = {
         "gecko": {
