@@ -55,7 +55,7 @@ Plain JavaScript and CSS, no build step and no third-party libraries.
 
 | File | Role |
 |---|---|
-| `manifest.json` | Manifest V3: content-script matches and permissions (`storage`, `activeTab`, pricewatchpro.com) |
+| `manifest.json` | Manifest V3: content-script matches and permissions (`activeTab`, pricewatchpro.com) |
 | `shared.js` | Reads the store and item number from the page URL; money formatting |
 | `content.js` | Renders the on-page panel |
 | `background.js` | Every network call (price lookup, track request), with a small in-memory cache |

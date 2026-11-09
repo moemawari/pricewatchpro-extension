@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "PriceWatchPro — Price Tracker for Walmart, Best Buy & Home Depot",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Free price history on Walmart, Best Buy and Home Depot product pages. See the lowest price and whether a sale is a real deal.",
   "icons": {
     "16": "icons/icon16.png",
@@ -20,7 +20,7 @@
   "background": {
     "service_worker": "background.js"
   },
-  "permissions": ["storage", "activeTab"],
+  "permissions": ["activeTab"],
   "host_permissions": [
     "https://www.pricewatchpro.com/*"
   ],
